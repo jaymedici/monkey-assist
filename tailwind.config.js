@@ -13,6 +13,10 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            boxShadow: {
+                soft: "0 3px 10px 0 rgb(48 46 56 / 6%)",
+                "soft-dark": "0 3px 10px 0 rgb(25 33 50 / 30%)",
+            },
         },
     },
 
