@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require("tailwindcss/colors");
+const plugin = require('tailwindcss/plugin');
 
 const customColors = {
     primary: colors.indigo["600"],
@@ -41,5 +42,12 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms')],
+    plugins: [
+        require('@tailwindcss/forms'),
+        plugin(({ addVariant, e }) => {
+            addVariant('sidebar-expanded', ({ modifySelectors, separator }) => {
+                modifySelectors(({ className }) => `.sidebar-expanded .${e(`sidebar-expanded${separator}${className}`)}`);
+            });
+        })
+    ],
 };

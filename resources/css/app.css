@@ -2,6 +2,9 @@
 @import "./components/button.css";
 @import "./components/popper.css";
 @import "./components/table.css";
+@import "./components/forms.css";
+@import "range-slider.css";
+
 
 @tailwind base;
 @tailwind components;

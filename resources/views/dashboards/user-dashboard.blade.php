@@ -60,7 +60,7 @@
     </div>
 </div>
 
-<div class="mt-4 mx-4 grid grid-cols-12 gap-4 sm:mt-5 sm:gap-5 lg:mt-6 lg:gap-6">
+<div class="my-4 mx-4 grid grid-cols-12 gap-4 sm:mt-5 sm:gap-5 lg:mt-6 lg:gap-6">
     <div class="col-span-12">
         <div class="card p-4">
             <div class="flex items-center justify-between">

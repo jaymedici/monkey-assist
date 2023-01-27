@@ -27,15 +27,25 @@
                 </svg>
             </button>
             <!-- Logo -->
-            <a class="hidden 2xl:block" href="{{ route('dashboard') }}">
+            <a x-show="sidebarExpanded" class="" href="{{ route('home') }}">
                 <img src="{{ asset('images/monkey_assist_logo.png') }}" alt="logo">
             </a>
-            <a class="block 2xl:hidden" href="{{ route('dashboard') }}">
+            <a x-show="!sidebarExpanded" class="w-12 h-12" href="{{ route('home') }}">
                 <img src="{{ asset('images/monkey_icon.png') }}" alt="logo">
             </a>
         </div>
 
         <!-- Links -->
+        <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if(in_array(Request::segment(1), ['tickets'])){{ 'bg-slate-900' }}@endif">
+            <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if(in_array(Request::segment(1), ['tickets'])){{ 'hover:text-slate-200' }}@endif" 
+                href="{{ route('tickets') }}"
+            >
+                <div class="flex items-center">
+                <i class="fa fa-clipboard-list"></i>
+                <span class="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">My Tickets</span>
+                </div>
+            </a>
+        </li>
         
 
         <!-- Expand / collapse button -->
