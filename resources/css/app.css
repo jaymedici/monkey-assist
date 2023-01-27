@@ -1,5 +1,7 @@
 @import "./components/card.css";
 @import "./components/button.css";
+@import "./components/popper.css";
+@import "./components/table.css";
 
 @tailwind base;
 @tailwind components;

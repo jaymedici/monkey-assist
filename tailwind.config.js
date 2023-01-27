@@ -1,4 +1,24 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
+const colors = require("tailwindcss/colors");
+
+const customColors = {
+    primary: colors.indigo["600"],
+    "primary-focus": colors.indigo["700"],
+    "secondary-light": "#ff57d8",
+    secondary: "#F000B9",
+    "secondary-focus": "#BD0090",
+    "accent-light": colors.indigo["400"],
+    accent: "#5f5af6",
+    "accent-focus": "#4d47f5",
+    info: colors.sky["500"],
+    "info-focus": colors.sky["600"],
+    success: colors.emerald["500"],
+    "success-focus": colors.emerald["600"],
+    warning: "#ff9800",
+    "warning-focus": "#e68200",
+    error: "#ff5724",
+    "error-focus": "#f03000",
+  };
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -17,6 +37,7 @@ module.exports = {
                 soft: "0 3px 10px 0 rgb(48 46 56 / 6%)",
                 "soft-dark": "0 3px 10px 0 rgb(25 33 50 / 30%)",
             },
+            colors: customColors,
         },
     },
 

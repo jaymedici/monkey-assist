@@ -27,10 +27,10 @@
                 </svg>
             </button>
             <!-- Logo -->
-            <a class="hidden xl:block" href="{{ route('dashboard') }}">
+            <a class="hidden 2xl:block" href="{{ route('dashboard') }}">
                 <img src="{{ asset('images/monkey_assist_logo.png') }}" alt="logo">
             </a>
-            <a class="block xl:hidden" href="{{ route('dashboard') }}">
+            <a class="block 2xl:hidden" href="{{ route('dashboard') }}">
                 <img src="{{ asset('images/monkey_icon.png') }}" alt="logo">
             </a>
         </div>
