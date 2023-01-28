@@ -17,7 +17,7 @@ $maxWidth = [
     x-on:keydown.escape.window="show = false"
     x-show="show"
     id="{{ $id }}"
-    class="fixed top-32 inset-x-0 px-4 pt-6 z-50 sm:px-0 sm:flex sm:items-top sm:justify-center"
+    class="fixed top-8 inset-x-0 px-4 pt-6 z-50 sm:px-0 sm:flex sm:items-top sm:justify-center"
     style="display: none;"
 >
     <div x-show="show" class="fixed inset-0 transform transition-all" x-on:click="show = false" x-transition:enter="ease-out duration-300"

@@ -15,32 +15,32 @@
             <thead>
                 <tr>
                 <th
-                    class="whitespace-nowrap rounded-l-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 lg:px-5"
+                    class="whitespace-nowrap rounded-l-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800"
                 >
                     #
                 </th>
                 <th
-                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 lg:px-5"
+                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800"
                 >
                     Subject
                 </th>
                 <th
-                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 lg:px-5"
+                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800"
                 >
                     Content
                 </th>
                 <th
-                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 lg:px-5"
+                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800"
                 >
                     Categories
                 </th>
                 <th
-                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 lg:px-5"
+                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800"
                 >
                     Status
                 </th>
                 <th
-                    class="whitespace-nowrap rounded-r-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800 dark:bg-navy-800 lg:px-5"
+                    class="whitespace-nowrap rounded-r-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800"
                 >
                     Action
                 </th>
