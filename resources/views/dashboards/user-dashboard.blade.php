@@ -1,8 +1,8 @@
 <x-app-layout>
 
-<div class="mt-4 ml-4 grid grid-cols-12 gap-4 sm:mt-5 sm:gap-5 lg:mt-6 lg:gap-6">
+<div class="mt-4 mx-4 grid grid-cols-12 gap-4 sm:mt-5 sm:gap-5 lg:mt-6 lg:gap-6">
     <div class="col-span-12 lg:col-span-8 xl:col-span-9">
-        <div class="card col-span-12 mt-12 mr-4 bg-gradient-to-r from-slate-700 to-slate-600 p-5 sm:col-span-8 sm:mt-0 sm:flex-row rounded-lg">
+        <div class="card col-span-12 mt-12 bg-gradient-to-r from-slate-700 to-slate-600 p-5 sm:col-span-8 sm:mt-0 sm:flex-row rounded-lg">
             <div class="flex justify-center sm:order-last">
                 <img class="-mt-16 h-40 sm:mt-0" src="{{ asset('images/monkeys-playing.png') }}"
                     alt="image" />
@@ -25,7 +25,7 @@
     </div>
 
     <div class="col-span-12 lg:col-span-4 xl:col-span-3">
-        <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-1 lg:gap-6 mr-4">
+        <div class="grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-1 lg:gap-6">
             <div class="rounded-lg bg-slate-300 px-4 pb-2 sm:px-5">   
                 <div class="space-y-4 py-3">
                     <div class="space-y-3 text-xs+ pt-2">
