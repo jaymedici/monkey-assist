@@ -3,7 +3,7 @@
         <div class="flex items-center justify-between">
             <h2 class="text-xl font-semibold">Recent Tickets</h2>
             <button
-                class="btn border border-info/30 bg-info/10 font-medium text-info  hover:bg-info/20 focus:bg-info/20 active:bg-info/25"
+                class="btn border border-view/30 bg-view/10 font-medium text-view  hover:bg-view/20 focus:bg-view/20 active:bg-view/25"
             >
                 <i class="fa-solid fa-list mr-1"></i>
                 View All Tickets

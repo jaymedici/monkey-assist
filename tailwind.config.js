@@ -13,6 +13,8 @@ const customColors = {
     "accent-focus": "#4d47f5",
     info: colors.sky["500"],
     "info-focus": colors.sky["600"],
+    view: colors.slate["500"],
+    "view-focus": colors.slate["600"],
     success: colors.emerald["500"],
     "success-focus": colors.emerald["600"],
     warning: "#ff9800",
