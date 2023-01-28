@@ -2,11 +2,14 @@
 
 namespace App\Http\Livewire\User;
 
+use App\Models\Category;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Component;
 
 class CreateTicket extends Component
 {
     public $showCreateTicketModal = false;
+    public Collection $categories;
 
     public function openModal()
     {
@@ -20,6 +23,8 @@ class CreateTicket extends Component
 
     public function render()
     {
+        $this->categories = Category::all();
+
         return view('livewire.user.create-ticket');
     }
 }

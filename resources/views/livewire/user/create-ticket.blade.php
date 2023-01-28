@@ -45,13 +45,9 @@
                             name="categories[]"
                         >
                             <option value="">Select a state...</option>
-                            <option value="Hardware">Hardware</option>
-                            <option value="Software">Software</option>
-                            <option value="Network">Network</option>
-                            <option value="Security">Security</option>
-                            <option value="Account access">Account access</option>
-                            <option value="Data recovery">Data recovery</option>
-                            <option value="Email Support">Email Support</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
                         </select>
                     </label>
                 </div>
