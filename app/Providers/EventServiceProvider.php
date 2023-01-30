@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\TicketOpened;
+use App\Listeners\CaptureTicketOpeningEventData;
+use App\Listeners\SendTicketOpenedNotification;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -17,6 +20,10 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        TicketOpened::class => [
+            CaptureTicketOpeningEventData::class,
+            SendTicketOpenedNotification::class,
         ],
     ];
 

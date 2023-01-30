@@ -27,17 +27,26 @@
         </x-slot>
 
         <x-slot name="content">
-            <div class="flex flex-col gap-4 mb-4">
+            <form wire:submit.prevent="save">
+                @csrf
+            <div class="flex flex-col gap-4 mb-2">
                 <div>
-                    <x-input-label for="subject" value="Subject" />
-                    <x-text-input id="subject" name="subject" type="text" class="mt-1 block w-full" />
+                    <x-input-label for="subject" value="Subject" required="true"/>
+                    <x-text-input
+                        wire:model="formData.subject" 
+                        id="subject" name="subject" 
+                        type="text" class="mt-1 block w-full" 
+                    />
                     <x-input-error :messages="$errors->first('subject')" class="mt-2" />
                 </div>
                 <div>
                     <label class="block">
-                        <x-input-label for="categories[]" value="Select categories corresponding to your issue" />
+                        <x-input-label for="categories[]" 
+                            value="Select categories corresponding to your issue" 
+                        />
                         <select
                             x-init="$el._tom = new Tom($el)"
+                            wire:model="formData.categories"
                             class="mt-1.5 w-full"
                             multiple
                             placeholder="Select a category..."
@@ -52,8 +61,12 @@
                     </label>
                 </div>
                 <div>
-                    <x-input-label for="content" value="Describe your issue" />
-                    <x-text-area id="content" name="content" class="mt-1 block w-full" rows="7"/>
+                    <x-input-label for="content" value="Describe your issue" required="true"/>
+                    <x-text-area
+                        wire:model="formData.content" 
+                        id="content" name="content" 
+                        class="mt-1 block w-full" rows="5"
+                    />
                     <x-input-error :messages="$errors->first('content')" class="mt-2" />
                 </div>
                 
@@ -67,9 +80,10 @@
                 Cancel
             </x-secondary-button>
 
-            <x-primary-button class="ml-2" wire:click="createTicket" wire:loading.attr="disabled">
+            <x-primary-button class="ml-2" type="submit" wire:loading.attr="disabled">
                 Create Ticket
             </x-primary-button>
+            </form>
         </x-slot>
     </x-dialog-modal>
 </div>
