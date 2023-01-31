@@ -2,23 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
 {
-    public function index()
+    public function home(): View
     {
-        
+        return $this->loadDashboard(auth()->user());
     }
-
-    public function userDashboard(): View
+    
+    /**
+     * Determine which dashboard to load based on the user's role.
+     *
+     * @param  User $user
+     * @return View
+     */
+    protected function loadDashboard(User $user): View
     {
+        if ($user->hasRole('Admin')) {
+            return view('dashboards.admin-dashboard');
+        }
+
         return view('dashboards.user-dashboard');
     }
 
-    public function adminDashboard(): View
-    {
-        return view('dashboards.admin-dashboard');
-    }
 }

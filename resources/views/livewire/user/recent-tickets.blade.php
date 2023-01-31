@@ -41,7 +41,7 @@
                         {{ $index + 1 }}
                     </td>
                     <td class="px-4 py-3 sm:px-5">{{ $ticket->subject }}</td>
-                    <td class="px-4 py-3 sm:px-5">{{ $ticket->content }}</td>
+                    <td class="text-sm px-4 py-3 sm:px-5">{{ $ticket->content }}</td>
                     <td class="px-4 py-3 sm:px-5">
                         @forelse ($ticket->categories as $category)
                         <div class="badge mb-1 rounded-full border border-info text-info">

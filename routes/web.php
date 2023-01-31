@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TicketsController;
 use App\Http\Livewire\User\AllTicketsByUser;
 use Illuminate\Support\Facades\Route;
 
@@ -22,9 +21,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/', [DashboardController::class, 'userDashboard'])->name('home');
+    Route::get('/', [DashboardController::class, 'home'])->name('home');
 
-    // Route::get('/user/tickets', [TicketsController::class, 'userTickets'])->name('user.tickets');
     Route::get('/user/tickets', AllTicketsByUser::class)->name('user.tickets');
     
 });

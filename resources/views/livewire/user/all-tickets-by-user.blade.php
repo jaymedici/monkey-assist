@@ -49,7 +49,7 @@
                             <td class="px-4 py-3 sm:px-5">
                                 {{ $ticket->subject }}
                             </td>
-                            <td class="px-3 py-3 font-medium text-slate-700 lg:px-5">
+                            <td class="px-3 py-3 text-sm font-medium text-slate-700 lg:px-5">
                                 {{ $ticket->content }}
                             </td>
                             <td class="px-4 py-3 sm:px-5">
