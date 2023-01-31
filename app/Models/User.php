@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -61,5 +62,17 @@ class User extends Authenticatable
     {
         return $this->tickets()->with('categories')
                     ->latest()->limit($records)->get();
+    }
+    
+    /**
+     * Get all tickets, paginated by number of records.
+     *
+     * @param  int $records
+     * @return LengthAwarePaginator
+     */
+    public function paginateAllTickets(int $records): LengthAwarePaginator
+    {
+        return $this->tickets()->with('categories')
+                    ->latest()->paginate($records);
     }
 }
