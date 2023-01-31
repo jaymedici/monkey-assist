@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/', [DashboardController::class, 'userDashboard'])->name('home');
 
-    Route::get('/tickets', [TicketsController::class, 'userTickets'])->name('tickets');
+    Route::get('/user/tickets', [TicketsController::class, 'userTickets'])->name('user.tickets');
     
 });
 

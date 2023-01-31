@@ -38,7 +38,7 @@
         <!-- Links -->
         <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if(in_array(Request::segment(1), ['tickets'])){{ 'bg-slate-900' }}@endif">
             <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if(in_array(Request::segment(1), ['tickets'])){{ 'hover:text-slate-200' }}@endif" 
-                href="{{ route('tickets') }}"
+                href="{{ route('user.tickets') }}"
             >
                 <div class="flex items-center">
                 <i class="fa fa-clipboard-list"></i>
@@ -49,7 +49,7 @@
 
         <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if(in_array(Request::segment(1), ['tickets'])){{ 'bg-slate-900' }}@endif">
             <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if(in_array(Request::segment(1), ['tickets'])){{ 'hover:text-slate-200' }}@endif" 
-                href="{{ route('tickets') }}"
+                href="#"
             >
                 <div class="flex items-center">
                 <i class="fa fa-list"></i>
@@ -60,7 +60,7 @@
 
         <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if(in_array(Request::segment(1), ['tickets'])){{ 'bg-slate-900' }}@endif">
             <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if(in_array(Request::segment(1), ['tickets'])){{ 'hover:text-slate-200' }}@endif" 
-                href="{{ route('tickets') }}"
+                href="#"
             >
                 <div class="flex items-center">
                 <i class="fa fa-users"></i>
