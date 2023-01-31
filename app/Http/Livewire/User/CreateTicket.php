@@ -22,9 +22,10 @@ class CreateTicket extends Component
     public function closeModal()
     {
         $this->showCreateTicketModal = false;
+        $this->formData = [];
     }
 
-    public function save()
+    public function save(TicketService $service)
     {
         Validator::make($this->formData, [
             'subject' => ['required', 'string', 'max:255'],
@@ -32,11 +33,13 @@ class CreateTicket extends Component
             'content' => ['required', 'string', 'max:1000'],
         ])->validate();
 
-        $service = new TicketService();
         $service->openTicket($this->formData, auth()->user());
         
-        $this->formData = [];
-        $this->showCreateTicketModal = false;
+        $this->closeModal();
+        $this->emit('ticket-opened');
+        $this->dispatchBrowserEvent('ticket-opened', [
+            'message' => 'Ticket Opened'
+        ]);
     }
 
     public function render()

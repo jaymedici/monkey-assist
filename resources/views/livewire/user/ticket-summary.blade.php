@@ -10,21 +10,21 @@
                         <p class="font-semibold text-slate-700">
                             Open Tickets
                         </p>
-                        <p class="text-right">2</p>
+                        <p class="text-right">{{ $openTicketsCount }}</p>
                     </div>
                     <div class="my-4 h-px  bg-slate-200"></div>
                     <div class="flex justify-between">
                         <p class="font-semibold text-slate-700">
                             Closed Tickets
                         </p>
-                        <p class="text-right">4</p>
+                        <p class="text-right">{{ $closedTicketsCount }}</p>
                     </div>
                     <div class="my-4 h-px  bg-slate-200"></div>
                     <div class="flex justify-between">
                         <p class="font-semibold text-slate-700">
                             Total
                         </p>
-                        <p class="text-right">4</p>
+                        <p class="text-right">{{ $totalTicketsCount }}</p>
                     </div>
                 </div>
             </div>

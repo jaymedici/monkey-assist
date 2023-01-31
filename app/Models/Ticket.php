@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Enums\TicketStatus;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -27,4 +28,15 @@ class Ticket extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
+    public function scopeOpen($query): Builder
+    {
+        return $query->where('status', TicketStatus::OPEN);
+    }
+
+    public function scopeClosed($query): Builder
+    {
+        return $query->where('status', TicketStatus::CLOSED);
+    }
+    
 }

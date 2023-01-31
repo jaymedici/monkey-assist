@@ -14,89 +14,50 @@
             <table class="is-zebra w-full pb-4 text-left">
             <thead>
                 <tr>
-                <th
-                    class="whitespace-nowrap rounded-l-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800"
-                >
+                <th class="whitespace-nowrap rounded-l-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800">
                     #
                 </th>
-                <th
-                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800"
-                >
+                <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800">
                     Subject
                 </th>
-                <th
-                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800"
-                >
+                <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800">
                     Content
                 </th>
-                <th
-                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800"
-                >
+                <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800">
                     Categories
                 </th>
-                <th
-                    class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800"
-                >
+                <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800">
                     Status
                 </th>
-                <th
-                    class="whitespace-nowrap rounded-r-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800"
-                >
+                <th class="whitespace-nowrap rounded-r-lg bg-slate-200 px-3 py-3 font-semibold uppercase text-slate-800">
                     Action
                 </th>
                 </tr>
             </thead>
             <tbody>
+                @forelse ($recentTickets as $index => $ticket)
                 <tr>
-                    <td class="whitespace-nowrap rounded-l-lg px-4 py-3 sm:px-5">1</td>
-                    <td class="px-4 py-3 sm:px-5">Help needed</td>
-                    <td class="px-4 py-3 sm:px-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere nisi libero, ut congue risus auctor at. Proin id cursus libero. Cras porta lobortis magna, ut aliquet ipsum accumsan sed
+                    <td class="whitespace-nowrap rounded-l-lg px-4 py-3 sm:px-5">
+                        {{ $index + 1 }}
                     </td>
-                    <td class="px-4 py-3 sm:px-5">Tech, Biz</td>
-                    <td class="px-4 py-3 sm:px-5">Open</td>
+                    <td class="px-4 py-3 sm:px-5">{{ $ticket->subject }}</td>
+                    <td class="px-4 py-3 sm:px-5">{{ $ticket->content }}</td>
+                    <td class="px-4 py-3 sm:px-5">
+                        @forelse ($ticket->categories as $category)
+                            {{ $category->name }}
+                        @empty
+                            Uncategorized
+                        @endforelse
+                    </td>
+                    <td class="px-4 py-3 sm:px-5">{{ $ticket->status }}</td>
                     <td class="rounded-r-lg px-4 py-3 sm:px-5">View</td>
                 </tr>
-                <tr>
-                    <td class="whitespace-nowrap rounded-l-lg px-4 py-3 sm:px-5">2</td>
-                    <td class="px-4 py-3 sm:px-5">Help needed</td>
-                    <td class="px-4 py-3 sm:px-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere nisi libero, ut congue risus auctor at. Proin id cursus libero. Cras porta lobortis magna, ut aliquet ipsum accumsan sed
+                @empty
+                    <td colspan="7" class="rounded-l-lg rounded-r-lg px-4 py-3 sm:px-5 text-xl text-center">
+                        No tickets opened yet
                     </td>
-                    <td class="px-4 py-3 sm:px-5">Tech, Biz</td>
-                    <td class="px-4 py-3 sm:px-5">Open</td>
-                    <td class="rounded-r-lg px-4 py-3 sm:px-5">View</td>
-                </tr>
-                <tr>
-                    <td class="whitespace-nowrap rounded-l-lg px-4 py-3 sm:px-5">3</td>
-                    <td class="px-4 py-3 sm:px-5">Help needed</td>
-                    <td class="px-4 py-3 sm:px-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere nisi libero, ut congue risus auctor at. Proin id cursus libero. Cras porta lobortis magna, ut aliquet ipsum accumsan sed
-                    </td>
-                    <td class="px-4 py-3 sm:px-5">Tech, Biz</td>
-                    <td class="px-4 py-3 sm:px-5">Open</td>
-                    <td class="rounded-r-lg px-4 py-3 sm:px-5">View</td>
-                </tr>
-                <tr>
-                    <td class="whitespace-nowrap rounded-l-lg px-4 py-3 sm:px-5">4</td>
-                    <td class="px-4 py-3 sm:px-5">Help needed</td>
-                    <td class="px-4 py-3 sm:px-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere nisi libero, ut congue risus auctor at. Proin id cursus libero. Cras porta lobortis magna, ut aliquet ipsum accumsan sed
-                    </td>
-                    <td class="px-4 py-3 sm:px-5">Tech, Biz</td>
-                    <td class="px-4 py-3 sm:px-5">Open</td>
-                    <td class="rounded-r-lg px-4 py-3 sm:px-5">View</td>
-                </tr>
-                <tr>
-                    <td class="whitespace-nowrap rounded-l-lg px-4 py-3 sm:px-5">5</td>
-                    <td class="px-4 py-3 sm:px-5">Help needed</td>
-                    <td class="px-4 py-3 sm:px-5">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris posuere nisi libero, ut congue risus auctor at. Proin id cursus libero. Cras porta lobortis magna, ut aliquet ipsum accumsan sed
-                    </td>
-                    <td class="px-4 py-3 sm:px-5">Tech, Biz</td>
-                    <td class="px-4 py-3 sm:px-5">Open</td>
-                    <td class="rounded-r-lg px-4 py-3 sm:px-5">View</td>
-                </tr>
+                @endforelse
+                
             </tbody>
             </table>
         </div>
