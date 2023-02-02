@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Ticket;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TicketSeeder extends Seeder
 {
@@ -15,6 +16,8 @@ class TicketSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('tickets')->delete();
+
         Ticket::factory()
             ->count(1000)
             ->hasCategories(3)

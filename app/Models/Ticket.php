@@ -55,6 +55,11 @@ class Ticket extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function events(): HasMany
+    {
+        return $this->hasMany(TicketEvent::class);
+    }
     
     /**
      * Scope a query to only include open tickets.
@@ -102,6 +107,19 @@ class Ticket extends Model
     {
         return $query->where('subject', 'like', "%{$search}%")
             ->orWhere('content', 'like', "%{$search}%");
+    }
+
+    public function getTimeTakenToClose(): ?int
+    {
+        if ($this->status === TicketStatus::OPEN) {
+            return null;
+        }
+
+        $openedDate = Carbon::parse($this->events()->opened()->first()->event_date);
+        $closedDate = Carbon::parse($this->events()->closed()->first()->event_date);
+
+        $timeTaken = $closedDate->diffInDays($openedDate);
+        return $timeTaken;
     }
     
 }

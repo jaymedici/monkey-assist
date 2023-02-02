@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             RolesAndPermissionsSeeder::class,
             DefaultAdminSeeder::class,
             TicketSeeder::class,
+            TicketEventSeeder::class,
         ]);
     }
 }

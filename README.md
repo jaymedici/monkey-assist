@@ -32,10 +32,10 @@ php artisan migrate
 ```html
 php artisan db:seed
 ```
-- Credentials for the admin are: email: info@codingmonkeys.nl password: password
+Credentials for the admin are: email: info@codingmonkeys.nl password: password
 
 - Compile the front-end
-- If you're on a dvelopment server, you can run:
+- If you're on a development server, you can run:
 ```html
 npm run dev
 ```
