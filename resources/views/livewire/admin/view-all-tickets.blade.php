@@ -4,14 +4,27 @@
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl font-semibold">All Submitted Tickets</h3>
     
-                <label class="block">
-                    <input
-                    class="form-input w-full h-8 rounded-full border border-slate-300 bg-transparent px-4 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary"
-                    placeholder="Search here..."
-                    type="text"
-                    wire:model="search"
-                    />
-                </label>
+                <div class="flex gap-2 items-center">
+                    <label class="block">
+                        <select
+                            wire:model="status"
+                            class="form-select text-sm content-center w-44 h-8 rounded-full border border-slate-300 bg-white px-4 py-2 hover:border-slate-400 focus:border-primary dark:border-navy-450 dark:bg-navy-700 dark:hover:border-navy-400 dark:focus:border-accent"
+                        >
+                            <option value="">Status Filter</option>
+                            <option value="Open">Open</option>
+                            <option value="Closed">Closed</option>
+                        </select>
+                    </label>
+
+                    <label class="block">
+                        <input
+                        class="form-input w-full h-8 rounded-full border border-slate-300 bg-transparent px-4 py-2 placeholder:text-slate-400/70 hover:border-slate-400 focus:border-primary"
+                        placeholder="Search here..."
+                        type="text"
+                        wire:model="search"
+                        />
+                    </label>
+                </div>
             </div>
     
             <div class="card mt-3">

@@ -12,6 +12,7 @@ class ViewAllTickets extends Component
 
     public $search = '';
     public $sortDirection = 'desc';
+    public $status = '';
 
     public function changeSortDirection()
     {
@@ -21,6 +22,7 @@ class ViewAllTickets extends Component
     public function render()
     {
         $tickets = Ticket::search($this->search)
+                        ->where('status', 'like', "%{$this->status}%")
                         ->orderBy('created_at', $this->sortDirection)
                         ->paginate(10);
 
