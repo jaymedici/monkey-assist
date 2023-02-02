@@ -18,7 +18,7 @@
     <div class="flex-1 relative flex flex-col overflow-hidden rounded-lg bg-gradient-to-br from-yellow-700 to-amber-500 p-3.5">
         <p class="text-xs uppercase text-pink-100">Avg. Time taken to close tickets</p>
         <div class="flex items-end justify-between space-x-2">
-            <p class="mt-4 text-2xl font-medium text-white">3.5 Days</p>
+            <p class="mt-4 text-2xl font-medium text-white">To-Do</p>
         </div>
         <div class="mask is-hexagon-2 absolute top-0 right-0 -m-3 h-16 w-16 bg-white/20"></div>
     </div>
