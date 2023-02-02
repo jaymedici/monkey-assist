@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Ticket extends Model
 {
@@ -36,7 +37,7 @@ class Ticket extends Model
     {
         return Attribute::make(
             get: fn ($value) => Carbon::parse($value)
-                ->isoFormat('D/M/YY - h:mm a'),
+                ->isoFormat('DD/MM/YYYY - h:mm a'),
         );
     }
 
@@ -48,6 +49,11 @@ class Ticket extends Model
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class);
+    }
+
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
     }
     
     /**

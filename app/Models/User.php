@@ -4,6 +4,9 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -32,21 +35,62 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /**
+     * An accessor to format the created_at attribute.
+     *
+     * @return Attribute
+     */
+    public function createdAt(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => Carbon::parse($value)
+                ->isoFormat('DD/MM/YYYY - h:mm a'),
+        );
+    }
+
     public function tickets(): HasMany
     {
         return $this->hasMany(Ticket::class);
     }
-
+    
+    /**
+     * Scope a query to search for a user by name or email.
+     *
+     * @param  Builder $query
+     * @param  string $search
+     * @return Builder
+     */
+    public function scopeSearch($query, $search): Builder
+    {
+        return $query->where('name', 'like', "%$search%")
+            ->orWhere('email', 'like', "%$search%");
+    }
+    
+    /**
+     * Get the number of open tickets submitted by the user.
+     *
+     * @return int
+     */
     public function getOpenTicketsCountAttribute(): int
     {
         return $this->tickets()->open()->get()->count();
     }
-
+    
+    /**
+     * Get the number of closed tickets submitted by the user.
+     *
+     * @return int
+     */
     public function getClosedTicketsCountAttribute(): int
     {
         return $this->tickets()->closed()->get()->count();
     }
-
+    
+    /**
+     * Get the total number of tickets submitted by the user.
+     *
+     * @return int
+     */
     public function getTicketsCountAttribute(): int
     {
         return $this->tickets()->get()->count();

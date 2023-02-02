@@ -21,8 +21,14 @@
                 <table class="is-hoverable w-full text-left">
                     <thead>
                     <tr>
-                        <th class="whitespace-nowrap rounded-tl-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 lg:px-5">
-                            #
+                        <th wire:click="changeSortDirection()"
+                            class="whitespace-nowrap rounded-tl-lg hover:underline cursor-pointer bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 lg:px-5">
+                            Date
+                            @if ($sortDirection == 'asc')
+                                <i class="text-sm fa fa-chevron-up"></i>
+                            @else
+                                <i class="text-sm fa fa-chevron-down"></i>
+                            @endif
                         </th>
                         <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 lg:px-5">
                             Subject
@@ -36,7 +42,7 @@
                         <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 lg:px-5">
                             Status
                         </th>
-                        <th class="whitespace-nowrap bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 lg:px-5">
+                        <th class="whitespace-nowrap rounded-tr-lg bg-slate-200 px-4 py-3 font-semibold uppercase text-slate-800 lg:px-5">
                             Action
                         </th>
                     </tr>
@@ -47,7 +53,7 @@
                             class="border-y border-transparent border-b-slate-200"
                         >
                             <td class="px-4 py-3 sm:px-5">
-                                {{ $index + 1 }}
+                                {{ $ticket->created_at }}
                             </td>
                             <td class="px-4 py-3 sm:px-5">
                                 {{ $ticket->subject }}
@@ -76,7 +82,7 @@
                                 @endif
                             </td>
                             <td class="px-4 py-3 sm:px-5">
-                                <a href="#"
+                                <a href="{{ route('ticket.show', $ticket->id) }}"
                                     class="btn border border-info/30 bg-info/10 text-sm text-info  hover:bg-info/20 focus:bg-info/20 active:bg-info/25"
                                 >
                                 View

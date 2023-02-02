@@ -23,3 +23,15 @@ toastr.options = {
 window.addEventListener('ticket-opened', event => {
     toastr.success(event.detail.message, 'Success');
 });
+
+window.addEventListener('user-updated', event => {
+    toastr.success(event.detail.message, 'Success');
+});
+
+window.addEventListener('comment-added', event => {
+    toastr.success(event.detail.message, 'Success');
+});
+
+window.addEventListener('ticket-status-updated', event => {
+    toastr.success(event.detail.message, 'Success');
+});

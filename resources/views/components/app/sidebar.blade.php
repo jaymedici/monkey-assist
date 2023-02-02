@@ -36,6 +36,17 @@
         </div>
 
         <!-- Links -->
+        <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if(in_array(Request::segment(1), ['home'])){{ 'bg-slate-900' }}@endif">
+            <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if(in_array(Request::segment(1), ['home'])){{ 'hover:text-slate-200' }}@endif" 
+                href="{{ route('home') }}"
+            >
+                <div class="flex items-center">
+                <i class="fa fa-home"></i>
+                <span class="text-sm font-medium ml-3 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100 duration-200">Home</span>
+                </div>
+            </a>
+        </li>
+
         @unlessrole('Admin')
         <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if(in_array(Request::segment(1), ['tickets'])){{ 'bg-slate-900' }}@endif">
             <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if(in_array(Request::segment(1), ['tickets'])){{ 'hover:text-slate-200' }}@endif" 
@@ -52,7 +63,7 @@
         @hasrole('Admin')
         <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if(in_array(Request::segment(1), ['tickets'])){{ 'bg-slate-900' }}@endif">
             <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if(in_array(Request::segment(1), ['tickets'])){{ 'hover:text-slate-200' }}@endif" 
-                href="#"
+                href="{{ route('admin.tickets') }}"
             >
                 <div class="flex items-center">
                 <i class="fa fa-list"></i>
@@ -61,9 +72,9 @@
             </a>
         </li>
 
-        <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if(in_array(Request::segment(1), ['tickets'])){{ 'bg-slate-900' }}@endif">
-            <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if(in_array(Request::segment(1), ['tickets'])){{ 'hover:text-slate-200' }}@endif" 
-                href="#"
+        <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0 @if(in_array(Request::segment(1), ['users'])){{ 'bg-slate-900' }}@endif">
+            <a class="block text-slate-200 hover:text-white truncate transition duration-150 @if(in_array(Request::segment(1), ['users'])){{ 'hover:text-slate-200' }}@endif" 
+                href="{{ route('admin.users') }}"
             >
                 <div class="flex items-center">
                 <i class="fa fa-users"></i>

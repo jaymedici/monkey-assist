@@ -63,7 +63,7 @@
                         @endif
                     </td>
                     <td class="rounded-r-lg px-4 py-3 sm:px-5">
-                        <a href="#"
+                        <a href="{{ route('ticket.show', $ticket) }}"
                             class="btn border border-info/30 bg-info/10 text-sm text-info  hover:bg-info/20 focus:bg-info/20 active:bg-info/25"
                         >
                         View

@@ -3,7 +3,9 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Livewire\Admin\ViewAllTickets;
+use App\Http\Livewire\Admin\ViewAllUsers;
 use App\Http\Livewire\User\ViewAllTicketsByUser;
+use App\Http\Livewire\ViewTicket;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,8 +27,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'home'])->name('home');
 
     Route::get('/user/tickets', ViewAllTicketsByUser::class)->name('user.tickets');
+    Route::get('/ticket/{ticket}', ViewTicket::class)->name('ticket.show');
+    Route::get('/tickets', ViewAllTickets::class)->name('admin.tickets');
 
-    Route::get('tickets', ViewAllTickets::class)->name('admin.tickets');
+    Route::get('/users', ViewAllUsers::class)->name('admin.users');
     
 });
 

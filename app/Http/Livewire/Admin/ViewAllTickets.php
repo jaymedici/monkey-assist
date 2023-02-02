@@ -11,10 +11,18 @@ class ViewAllTickets extends Component
     use WithPagination;
 
     public $search = '';
+    public $sortDirection = 'desc';
+
+    public function changeSortDirection()
+    {
+        $this->sortDirection = $this->sortDirection === 'asc' ? 'desc' : 'asc';
+    }
 
     public function render()
     {
-        $tickets = Ticket::search($this->search)->paginate(10);
+        $tickets = Ticket::search($this->search)
+                        ->orderBy('created_at', $this->sortDirection)
+                        ->paginate(10);
 
         return view('livewire.admin.view-all-tickets', [
             'tickets' => $tickets,
