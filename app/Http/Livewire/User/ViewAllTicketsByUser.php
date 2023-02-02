@@ -5,7 +5,7 @@ namespace App\Http\Livewire\User;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class AllTicketsByUser extends Component
+class ViewAllTicketsByUser extends Component
 {
     use WithPagination;
 
@@ -13,7 +13,7 @@ class AllTicketsByUser extends Component
     {
         $tickets = auth()->user()->paginateAllTickets(10);
         
-        return view('livewire.user.all-tickets-by-user', [
+        return view('livewire.user.view-all-tickets-by-user', [
             'tickets' => $tickets,
         ]);
     }
