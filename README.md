@@ -3,4 +3,54 @@
 
 ## About MonkeyAssist
 
-MonkeyAssist is a demo ticket support ticketing system built with Laravel, Livewire and TailwindCSS.
+MonkeyAssist is a demo ticket support ticketing system built with love using Laravel, Livewire and TailwindCSS.
+
+### Installation
+- Git clone the repo
+- Rename the .env.example to .env and change the variables to match your server
+- On your shell install the app's dependencies via composer:
+```html
+composer install
+```
+
+- Install node packages and dependencies
+```html
+npm install
+```
+
+- Generate application encryption key
+```html
+php artisan key:generate
+```
+
+- Migrate the tables
+```html
+php artisan migrate
+```
+
+- Seed the database with dummy data and a default admin. 
+```html
+php artisan db:seed
+```
+- Credentials for the admin are: email: info@codingmonkeys.nl password: password
+
+- Compile the front-end
+- If you're on a dvelopment server, you can run:
+```html
+npm run dev
+```
+- If you want to compile for productiom, you can use:
+```html
+npm run build
+```
+
+- The system also use queues to send email at some point. You can run the queue worker with:
+```html
+php artisan queue:work
+```
+
+- Finally, serve your application
+```html
+php artisan serve
+```
+
