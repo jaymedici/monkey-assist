@@ -20,11 +20,11 @@ class DefaultAdminSeeder extends Seeder
 
         DB::table('users')->insert([
             'name' => 'Admin',
-            'email' => 'info@codingmonkeys.nl',
+            'email' => 'info@test.com',
             'password' => Hash::make('password'),
         ]);
 
-        $user = DB::table('users')->where('email', 'info@codingmonkeys.nl')->first();
+        $user = DB::table('users')->where('email', 'info@test.com')->first();
         $adminRole = DB::table('roles')->where('name', 'Admin')->first();
 
         DB::table('model_has_roles')->insert([
